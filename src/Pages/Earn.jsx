@@ -61,7 +61,7 @@ function Earn() {
     <div className="page">
       <main className="main">
         <div className="inner">
-          <div className="page-title text-2xl">Tasks</div>
+          <div className="page-title">Tasks</div>
           <div className="flex gap-2 justify-between mb-4">
             <div className="p-4 bg-slate-900 rounded-2xl bg-opacity-50 w-[50%]">
               <p>Task Completed</p>
@@ -124,36 +124,6 @@ function Earn() {
                     )
                   )}
                 </div>
-            </main >
-            <AppBar />
-            <div className="bottom-sheet" style={{ display: isDialogOpen ? "flex" : "none" }}>
-                    <div className="bottom-sheet-bg" style={{ touchAction: "none", userSelect: "none" }} />
-                    <div className="bottom-sheet-inner">
-                        <div className="bottom-sheet-close" onClick={() => { setDialogOpen("") }}>
-                            <DeleteIcon />
-                        </div>
-                        {
-                            TASK_LIST.slice(0, -1).map((item, index) => (
-                                isDialogOpen == item && (
-                                    <TaskChannelDialog
-                                        setDialogOpen={setDialogOpen}
-                                        taskName={item}
-                                        channelName={TASK_LIST_NAME[index]}
-                                        url={TASK_LIST_LINKS[index]}
-                                        score={TASK_LIST_SCORE[index]}
-                                        key={item}
-                                    />
-                                )
-                            ))
-                        }
-                        {
-                            isDialogOpen == "invite-task" && (
-                                <InviteTaskDialog
-                                    setDialogOpen={setDialogOpen}
-                                />
-                            )
-                        }
-
               </div>
             )}
             {TASK_LIST.filter((task) => !checkTask(task)).length > 0 && (
