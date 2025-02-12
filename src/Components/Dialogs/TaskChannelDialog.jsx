@@ -46,8 +46,9 @@ const TaskChannelDialog = ({ taskName, channelName, url, score, setDialogOpen })
                 <div className="text-[32px] font-semibold leading-12">{`Join our ${channelName} channel`}</div>
                 <div className="flex justify-center mt-4">
                     <button
+                        style={{ border: "3px solid white" }}
                         rel="noopener noreferrer"
-                        className="button button-primary !bg-[#FFD600] !text-black button-default"
+                        className="button text-white rounded-full text-xl p-4 font-bold"
                         onClick={handleJoin}
                     >
                         Join
@@ -61,7 +62,8 @@ const TaskChannelDialog = ({ taskName, channelName, url, score, setDialogOpen })
                 </div>
                 <button
                     rel="noopener noreferrer"
-                    className="button button-primary button-default mt-4"
+                    style={{ border: "3px solid white" }}
+                    className="button text-white bg-gradient-to-b from-[#fd55f5] to-[#a32ea3] rounded-full text-xl p-4 font-bold mt-4"
                     onClick={handleClick}
                 >
                     Check
