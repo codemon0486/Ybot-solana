@@ -12,7 +12,12 @@ import { FaArrowRight } from "react-icons/fa6";
 import { UserBalance } from "../Components/UserBalance";
 import AppBar from "../Components/AppBar";
 
-import { BACKEND_URL, FARMING_SECONDS, POINT_PER_FARMING, GAME_DATE } from "../constants";
+import {
+  BACKEND_URL,
+  FARMING_SECONDS,
+  POINT_PER_FARMING,
+  GAME_DATE,
+} from "../constants";
 
 function Home() {
   const navigate = useNavigate();
@@ -28,7 +33,7 @@ function Home() {
     farming,
     setFarming,
     yCrystal,
-    level
+    level,
   } = useContext(PointContext);
 
   const handleInitialize = async () => {
@@ -58,7 +63,8 @@ function Home() {
     }
   };
 
-  const defaultGradient = "bg-gradient-to-r from-purple-500 via-pink-500 to-red-500";
+  const defaultGradient =
+    "bg-gradient-to-r from-purple-500 via-pink-500 to-red-500";
   const [auraGradient, setAuraGradient] = useState(
     GAME_DATE[0]?.colors?.gradient || defaultGradient
   );
@@ -69,20 +75,41 @@ function Home() {
         <main className="main">
           <div className="p-4 flex justify-between items-center">
             <div className="flex cursor-pointer items-center">
-              <div className="flex text-center items-center gap-2" onClick={() => { navigate("/account"); }}>
-                <img src={`/images/avatars/${user.level}.png`} alt="user avatar" width={48} />
+              <div
+                className="flex text-center items-center gap-2"
+                onClick={() => {
+                  navigate("/account");
+                }}
+              >
+                <img
+                  src={`/images/avatars/${user.level}.png`}
+                  alt="user avatar"
+                  width={48}
+                />
                 <div className="flex flex-col gap-2">
                   <p>{username.toUpperCase()}</p>
-                  <div>
-                    LVL {level}
-                  </div>
+                  <div>LVL {level}</div>
                 </div>
               </div>
             </div>
             <div className="bg-[#ffffff26] flex h-[24px] gap-4 rounded-2xl items-center">
-              <img src="/images/y_crystal.png" alt="y token" width={24} height={24} />
+              <img
+                src="/images/y_crystal.png"
+                alt="y token"
+                width={24}
+                height={24}
+              />
               <div>{yCrystal ?? 0}</div>
-              <img src="/images/add_button.png" alt="ad button" width={24} height={24} onClick={() => { navigate("/store") }} className="cursor-pointer" />
+              <img
+                src="/images/add_button.png"
+                alt="ad button"
+                width={24}
+                height={24}
+                onClick={() => {
+                  navigate("/store");
+                }}
+                className="cursor-pointer"
+              />
             </div>
           </div>
           <div className="mt-4">
@@ -152,13 +179,17 @@ function Home() {
               </button>
             ) : (
               <div>
-                <div className="button progress button-default mx-auto !w-[90%] mb-4" style={{
-                  background: 'linear-gradient(to right, #8c5aff 40%, transparent 40%)'
-                }}>
+                <div
+                  className="button progress button-default mx-auto !w-[90%] mb-4"
+                  style={{
+                    background:
+                      "linear-gradient(to right, #8c5aff 40%, transparent 40%)",
+                  }}
+                >
                   {(remainTime / FARMING_SECONDS) * 100}%
                 </div>
                 <div className="text-center">
-                  <div className="text-md font-medium text-[#8b8e93]">
+                  <div className="text-md w-[90%] m-auto font-medium text-[#8b8e93]">
                     Farming {POINT_PER_FARMING / (FARMING_SECONDS / 3600)}/hr
                   </div>
                   <div className="text-md font-medium text-[#8b8e93]">
@@ -167,14 +198,14 @@ function Home() {
                       .hours()
                       ?.toString()
                       .padStart(2, "0")} : ${moment
-                        .duration(remainTime, "seconds")
-                        .minutes()
-                        ?.toString()
-                        .padStart(2, "0")} : ${moment
-                          .duration(remainTime, "seconds")
-                          .seconds()
-                          ?.toString()
-                          .padStart(2, "0")} left`}
+                      .duration(remainTime, "seconds")
+                      .minutes()
+                      ?.toString()
+                      .padStart(2, "0")} : ${moment
+                      .duration(remainTime, "seconds")
+                      .seconds()
+                      ?.toString()
+                      .padStart(2, "0")} left`}
                   </div>
                 </div>
               </div>
