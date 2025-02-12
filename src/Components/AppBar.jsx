@@ -6,7 +6,7 @@ function AppBar() {
     return pathname === path ? "text-[#8c5aff]" : "";
   };
   return (
-    <div className="z-40 app-bar bg-[#0f121f] rounded-full w-[86%] m-auto mb-5 shadow-[1px -1px 8px rgba(0,0,0,0.5)]">
+    <div className="z-40 app-bar bg-[#0f121f] rounded-full w-[92%] m-auto mb-5 shadow-[1px -1px 8px rgba(0,0,0,0.5)]">
       <nav className="app-bar-nav flex justify-around gap-2 relative p-2">
         <Link
           to="/"
