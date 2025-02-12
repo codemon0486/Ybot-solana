@@ -36,7 +36,7 @@ const Wallet = () => {
               </div>
               <div className="page-title text-2xl">Wallet</div>
             </div>
-            <div className="flex flex-col bg-[#15140c] text-center p-4 w-full rounded-2xl gap-4">
+            <div className="flex flex-col bg-[#271e3d] text-center p-4 w-full rounded-2xl gap-4">
               <div className="w-full justify-center flex text-center">
                 <img
                   src="/images/account/wallet_connect.png"

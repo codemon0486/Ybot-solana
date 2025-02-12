@@ -68,7 +68,7 @@ function Friends() {
             </div>
             <div className="page-title text-2xl">Friends</div>
           </div>
-          <div className="flex flex-col bg-[#15140c] text-center p-4 w-full rounded-2xl gap-4 mt-4">
+          <div className="flex flex-col bg-[#271e3d] text-center p-4 w-full rounded-2xl gap-4 mt-4">
             <div className="w-full justify-center flex text-center">
               <img
                 src="/images/account/friends_invite.png"
@@ -96,7 +96,7 @@ function Friends() {
                             </button> */}
             </div>
           </div>
-          <div className="bg-[#15140c] p-4 rounded-2xl mt-4">
+          <div className="bg-[#271e3d] p-4 rounded-2xl mt-4">
             <div className="flex justify-between mb-4">
               <div className="text-[18px]">Your friends</div>
               {/* <button className="w-[24px]" onClick={fetchFriends}>
