@@ -152,7 +152,9 @@ function Home() {
               </button>
             ) : (
               <div>
-                <div className="button button-primary button-default mx-auto !w-[90%] mb-4">
+                <div className="button progress button-default mx-auto !w-[90%] mb-4" style={{
+                  background: 'linear-gradient(to right, #8c5aff 40%, transparent 40%)'
+                }}>
                   {(remainTime / FARMING_SECONDS) * 100}%
                 </div>
                 <div className="text-center">
