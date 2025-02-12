@@ -48,7 +48,7 @@ const TaskChannelDialog = ({ taskName, channelName, url, score, setDialogOpen })
                     <button
                         style={{ border: "3px solid white" }}
                         rel="noopener noreferrer"
-                        className="button text-white rounded-full text-xl p-4 font-bold"
+                        className="button button-primary text-white rounded-full text-xl p-4 font-bold"
                         onClick={handleJoin}
                     >
                         Join
